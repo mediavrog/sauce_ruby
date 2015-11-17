@@ -181,7 +181,7 @@ module Sauce
       end
 
       if sc_path.nil?
-        raise TunnelNotPossibleException, "No executable found at #{sc_path}, or it can't be executed by #{Process.euid}"
+        raise TunnelNotPossibleException, "No executable found at #{paths.join(' or ')}, or it can't be executed by #{Process.euid}"
       end
 
       return File.absolute_path sc_path
